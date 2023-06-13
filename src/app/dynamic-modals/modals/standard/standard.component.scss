@@ -1,0 +1,122 @@
+.backdrop {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.32);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.add {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal {
+  position: fixed;
+  opacity: 0;
+  transition: opacity 1s ease-out, translate 1s ease-in;
+  z-index: 200;
+  width: 350px;
+  background: white;
+  min-height: 15rem;
+  padding: 1rem;
+  //border: 1px solid var(--light-gray, #ccc);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  word-break: break-all;
+  border-radius: 5px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%) !important;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .close-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .modal__title,
+  .modal__title-description {
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e2e2e;
+  }
+
+  .modal__body {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2e2e2e;
+    text-align: center;
+    height: 100px;
+  }
+
+  .modal__actions {
+    text-align: center;
+    display: flex;
+    gap: 4%;
+
+    .modal__action {
+      font: inherit;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      border-radius: 5px;
+      height: 40px;
+    }
+
+    .full-width {
+      flex: 0 0 100%;
+    }
+
+    .haft-width {
+      flex: 0 0 48%;
+    }
+
+    button {
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+    }
+
+    .reject-btn {
+      background: #e8e9fb;
+      border: 1px solid #e8e9fb;
+      color: #141ed2;
+      font-size: 14px;
+    }
+
+    .confirm-btn {
+      background: #141ed2;
+      border: 1px solid #141ed2;
+      font-size: 14px;
+    }
+
+    .delete-btn {
+      background: #ff1a12;
+      border: 1px solid #ff1a12;
+      font-size: 14px;
+    }
+  }
+}

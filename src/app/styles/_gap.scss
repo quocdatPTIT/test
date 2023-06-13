@@ -1,0 +1,16 @@
+@import "variables";
+
+@each $size, $value in $gap-values {
+  .gap-x-#{$size} {
+    column-gap: map-get($gap-values, $size);
+  }
+
+  .gap-y-#{$size} {
+    row-gap: map-get($gap-values, $size);
+  }
+
+  .gap-#{$size} {
+    column-gap: map-get($gap-values, $size);
+    row-gap: map-get($gap-values, $size);
+  }
+}

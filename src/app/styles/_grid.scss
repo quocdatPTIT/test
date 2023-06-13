@@ -1,0 +1,38 @@
+@import "variables";
+
+@each $column, $size in $grid-template-columns-values {
+  .grid-cols-#{ $column } {
+    grid-template-columns: map-get($grid-template-columns-values, $column);
+  }
+}
+
+@each $column, $size in $grid-template-rows-values {
+  .grid-rows-#{$column} {
+    grid-template-rows: map-get($grid-template-rows-values, $column);
+  }
+}
+
+@each $column, $size in $grid-rows-start-end-values {
+  @debug $column;
+  .row-end-#{$column} {
+    grid-row-end: map-get($grid-rows-start-end-values, $column);
+  }
+
+  .row-start-#{$column} {
+    grid-row-start: map-get($grid-rows-start-end-values, $column);;
+  }
+}
+
+@each $column, $size in $grid-columns-start-end-values {
+  .col-end-#{$column} {
+    grid-column-end: map-get($grid-columns-start-end-values, $column);
+  }
+
+  .col-start-#{$column} {
+    grid-column-start: map-get($grid-columns-start-end-values, $column);
+  }
+}
+
+.grid {
+  display: grid;
+}

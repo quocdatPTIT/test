@@ -1,0 +1,10 @@
+<div class="backdrop" #backdrop></div>
+<div class="modal" #modal>
+  <div class="icon">
+    <img src="https://img.icons8.com/fluency/48/null/ok.png" alt="logo"/>
+    <img src="https://img.icons8.com/fluency/16/null/multiply.png" alt="x" class="close-icon" (click)="data.onClose()"/>
+  </div>
+  <h2 class="modal__title">{{ data.header }}</h2>
+  <div class="modal__body" #modalBody></div>
+  <div class="modal__actions" #modalFooter></div>
+</div>

@@ -1,0 +1,29 @@
+@import "variables";
+
+@mixin container {
+  width: 100%;
+  min-width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint, $size in $breakpoints {
+    @media (min-width: $size) {
+      max-width: $size;
+    }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  .grid-#{$breakpoint} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-gap: 1rem;
+
+    @media (min-width: $size) {
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+}
